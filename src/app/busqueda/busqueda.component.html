@@ -1,0 +1,62 @@
+<app-home></app-home>
+<div class="row">            
+    <div class="col-md-4 ">
+      <br> 
+    </div>
+</div>   
+<div class="shadow-none p-3 mb-5 bg-light rounded">            
+    BUSQUEDAS
+</div>  
+
+<div class="panel panel-primary">
+   <div>
+       
+        <div class="row">            
+            <div class="col-md-4 ">
+              <br> 
+            </div>
+        </div>  
+        <form class="row g-3" [formGroup]="busquedaform" (ngSubmit)="onBuscar()">
+        
+        <div class="row my-3 p-3 bg-body rounded shadow-sm"> 
+            <div class="col-md-4">                
+                <label for="IdentificadorCI" class="form-label">Identificador del CI</label>
+                <input id="IdentificadorCI"  type="text" class="form-control" formControlName="IdentificadorCI" placeholder="Identificador del CI">
+            </div>
+            <div class="col-md-4">                
+                <label for="IdInterfaz" class="form-label">ID Interface</label>
+                <input id="IdInterfaz"  type="text" class="form-control" formControlName="IdInterfaz" placeholder="ID Interface">
+            </div>
+            <div class="col-md-4"> 
+                <label for="Middleware" class="form-label">Middleware</label>
+                <input id="Middleware"  type="text" class="form-control" formControlName="Middleware" placeholder="Middleware">
+            </div>
+        </div>  
+        
+        
+        <div class="row">            
+            <div class="col-md-4 ">
+              <br> 
+            </div>
+        </div>  
+       
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="form-group text-center">
+                    <div class="divider-10"></div>
+                    <button type="submit" class="btn btn-primary">Buscar</button>
+                </div>
+            </div>
+        </div>
+
+        </form>
+
+    </div>
+    <div class="row">            
+        <div class="col-md-4 ">
+          <br> 
+        </div>
+    </div>  
+    <app-detalle></app-detalle>
+
+</div>

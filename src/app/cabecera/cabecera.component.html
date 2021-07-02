@@ -1,0 +1,73 @@
+
+<div>
+    <form class="row g-3" [formGroup]="cabeceraform" (ngSubmit)="onGuardar()" >
+        <div class="my-3 p-3 bg-body rounded shadow-sm">   
+            <div class="row"> 
+                <div class="col-md-4">                   
+                    <label for="IdentificadorCI" class="form-label">Identificador del CI</label>
+                    <input id="IdentificadorCI"  type="text" class="form-control" formControlName="IdentificadorCI" placeholder="Identificador del CI">
+                </div>
+                <div class="col-md-4">                   
+                    <label for="IdentificacionActivo" class="form-label">Identificación del Activo</label>
+                    <input id="IdentificacionActivo"  type="text" class="form-control" formControlName="IdentificacionActivo" placeholder="Identificación del Activo">
+                </div>
+                <div class="col-md-4">                    
+                    <section>
+                        <label for="entornos"  class="form-label text-bold">Entorno</label>
+                        <select formControlName="entornos">
+                          <option [ngValue]="null" disabled>Seleccionar</option>  
+                          <option *ngFor="let item of ListaEntorno" [ngValue]="item.id">
+                            <span>{{ item.nombre }}</span>
+                          </option>
+                        </select>
+                      </section>
+                </div>
+            </div>
+            <div class="row"> 
+                <div class="col-4">                    
+                    <section>
+                        <label for="estados"  class="form-label text-bold">Estado</label>
+                        <select formControlName="Estados">
+                          <option [ngValue]="null" disabled>Seleccionar</option>  
+                          <option *ngFor="let item of ListaEstado" [ngValue]="item.id">
+                            <span>{{ item.nombre }}</span>
+                          </option>
+                        </select>
+                      </section>
+                </div>
+                <div class="col-md-8">                    
+                    <label for="Descripcion" class="form-label">Descripción</label>
+                    <input id="Descripcion"  type="text" class="form-control" formControlName="Descripcion" placeholder="Descripcion">
+                </div>
+            </div>
+            <div class="row"> 
+                <div class="col-md-4 ">
+                    <br> 
+                  </div>
+            </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="form-group text-center">
+                <div class="divider-10"></div>
+                <button type="submit" class="btn btn-primary">Guardar</button>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="form-group text-center">
+                <div class="divider-10"></div>
+                <button [routerLink]="['/secuencia']"    type="submit" class="btn btn-primary">Agregar Secuencia</button>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="form-group text-center">
+                <div class="divider-10"></div>
+                <button [routerLink]="['/busqueda']"   type="submit" class="btn btn-primary">Salir</button>
+            </div>
+        </div>
+    </div>     
+   </form>
+
+
+</div>
